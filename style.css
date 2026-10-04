@@ -1,86 +1,129 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+html,
+body {
+  margin: 0;
+  padding: 0;
 
-    <title>Project_UTS</title>
+  width: 100%;
+  min-height: 100%;
 
-    <meta
-      name="viewport"
-      content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"
-    />
+  background: #e6e6e6;
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="full-screen" content="yes" />
-    <meta name="screen-orientation" content="portrait" />
-    <meta name="x5-fullscreen" content="true" />
-    <meta name="360-fullscreen" content="true" />
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    <meta name="renderer" content="webkit" />
-    <meta name="force-rendering" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  overflow-x: hidden;
+}
 
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link rel="icon" href="./favicon.ico" />
-  </head>
+body {
+  display: flex;
+  flex-direction: column;
 
-  <body>
+  align-items: center;
+  justify-content: flex-start;
 
-    <h1 class="header">Project_UTS</h1>
+  min-height: 100vh;
+}
 
-    <div
-      id="GameDiv"
-      cc_exact_fit_screen="false"
-      style="width: 400px; height: 711px;"
-    >
-      <div id="Cocos3dGameContainer">
+/* ========================= */
+/* HEADER */
+/* ========================= */
 
-        <canvas
-          id="GameCanvas"
-          width="720"
-          height="1280"
-          tabindex="99"
-        ></canvas>
+.header {
+  margin: 18px 0 12px 0;
+  padding: 0;
 
-      </div>
-    </div>
+  font-size: 34px;
+  font-weight: bold;
 
-    <p class="footer">
-      Created with
-      <a
-        href="https://www.cocos.com/products"
-        title="Cocos Creator"
-      >
-        Cocos Creator
-      </a>
-    </p>
+  text-align: center;
 
-    <!-- Polyfills -->
-    <script
-      src="./src/polyfills.bundle.js"
-      charset="utf-8"
-    ></script>
+  color: #000000;
+}
 
-    <!-- SystemJS -->
-    <script
-      src="./src/system.bundle.js"
-      charset="utf-8"
-    ></script>
+#GameDiv {
+  width: 400px !important;
+  height: 711px !important;
 
-    <!-- Import Map -->
-    <script
-      src="./src/import-map.json"
-      type="systemjs-importmap"
-      charset="utf-8"
-    ></script>
+  margin: 0 auto !important;
+  padding: 0 !important;
 
-    <!-- Cocos -->
-    <script>
-      System.import("./index.js").catch(function (err) {
-        console.error(err);
-      });
-    </script>
+  position: relative !important;
 
-  </body>
-</html>
+  background: #000000;
+
+  overflow: hidden !important;
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.28);
+}
+
+/* ========================= */
+/* COCOS CONTAINER */
+/* ========================= */
+
+#Cocos3dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  position: relative !important;
+
+  overflow: hidden !important;
+}
+
+#GameCanvas {
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+
+  touch-action: none;
+}
+
+.footer {
+  margin: 12px 0 18px 0;
+  padding: 0;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  color: #111111;
+}
+
+.footer a {
+  color: #604080;
+}
+
+@media screen and (max-width: 500px) {
+
+  #GameDiv {
+    width: 90vw !important;
+    height: calc(90vw * 16 / 9) !important;
+  }
+
+  .header {
+    margin-top: 12px;
+    margin-bottom: 10px;
+
+    font-size: 28px;
+  }
+
+  .footer {
+    margin-top: 10px;
+
+    font-size: 14px;
+  }
+}
