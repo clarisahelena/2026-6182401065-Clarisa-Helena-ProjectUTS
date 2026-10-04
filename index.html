@@ -43,21 +43,26 @@
       Project_UTS
     </h1>
 
-    <div
-      id="GameDiv"
-      cc_exact_fit_screen="false"
-      style="width: 360px; height: 640px;"
-    >
-      <div id="Cocos3dGameContainer">
+    <div id="GameWrapper">
 
-        <canvas
-          id="GameCanvas"
-          width="360"
-          height="640"
-          tabindex="99"
-        ></canvas>
+      <div
+        id="GameDiv"
+        cc_exact_fit_screen="false"
+      >
+
+        <div id="Cocos3dGameContainer">
+
+          <canvas
+            id="GameCanvas"
+            width="720"
+            height="1280"
+            tabindex="99"
+          ></canvas>
+
+        </div>
 
       </div>
+
     </div>
 
     <p class="footer">
@@ -70,30 +75,37 @@
       </a>
     </p>
 
-    <!-- Polyfills -->
+    <!-- Cocos -->
     <script
       src="./src/polyfills.bundle.js"
       charset="utf-8"
     ></script>
 
-    <!-- SystemJS -->
     <script
       src="./src/system.bundle.js"
       charset="utf-8"
     ></script>
 
-    <!-- Import Map -->
     <script
       src="./src/import-map.json"
       type="systemjs-importmap"
       charset="utf-8"
     ></script>
 
-    <!-- Start Game -->
+    <script src="./resize-game.js"></script>
+
     <script>
-      System.import("./index.js").catch(function (err) {
-        console.error(err);
-      });
+      System.import("./index.js")
+        .then(function () {
+
+          if (window.updateGameSize) {
+            window.updateGameSize();
+          }
+
+        })
+        .catch(function (err) {
+          console.error(err);
+        });
     </script>
 
   </body>
