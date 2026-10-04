@@ -75,7 +75,6 @@
       </a>
     </p>
 
-    <!-- Cocos -->
     <script
       src="./src/polyfills.bundle.js"
       charset="utf-8"
@@ -92,16 +91,14 @@
       charset="utf-8"
     ></script>
 
-    <script src="./resize-game.js"></script>
+    <script src="./script.js"></script>
 
     <script>
       System.import("./index.js")
         .then(function () {
-
           if (window.updateGameSize) {
             window.updateGameSize();
           }
-
         })
         .catch(function (err) {
           console.error(err);
