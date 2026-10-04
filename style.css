@@ -8,7 +8,10 @@ body {
 
   background: #e6e6e6;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   overflow-x: hidden;
 }
@@ -27,38 +30,47 @@ body {
   margin: 18px 0 12px 0;
   padding: 0;
 
-  text-align: center;
-
   font-size: 34px;
   font-weight: bold;
+
+  text-align: center;
 
   color: #000000;
 }
 
-#GameDiv {
-  width: 400px !important;
-  aspect-ratio: 9 / 16;
+#GameWrapper {
+  width: 400px;
+  height: 711px;
 
   position: relative;
 
   margin: 0 auto;
+}
+
+#GameDiv {
+  width: 400px !important;
+  height: 711px !important;
+
+  position: relative !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 
   background: #000000;
 
-  overflow: hidden;
+  overflow: hidden !important;
 
   border-radius: 18px;
 
   box-sizing: border-box;
 
   box-shadow:
-    0 4px 18px rgba(0, 0, 0, 0.25);
+    0 5px 18px rgba(0, 0, 0, 0.28);
 }
 
-
 #Cocos3dGameContainer {
-  width: 100% !important;
-  height: 100% !important;
+  width: 400px !important;
+  height: 711px !important;
 
   position: absolute !important;
 
@@ -72,8 +84,8 @@ body {
 }
 
 #GameCanvas {
-  width: 100% !important;
-  height: 100% !important;
+  width: 400px !important;
+  height: 711px !important;
 
   position: absolute !important;
 
@@ -83,7 +95,7 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 
-  display: block;
+  display: block !important;
 
   touch-action: none;
 }
@@ -92,9 +104,9 @@ body {
   margin: 12px 0 18px 0;
   padding: 0;
 
-  text-align: center;
-
   font-size: 16px;
+
+  text-align: center;
 
   color: #111111;
 }
@@ -112,37 +124,21 @@ body {
     font-size: 28px;
   }
 
-  #GameDiv {
-    width: 92vw !important;
-    aspect-ratio: 9 / 16;
+  #GameWrapper {
+    width: 90vw;
+    height: calc(90vw * 16 / 9);
+  }
 
-    border-radius: 14px;
+  #GameDiv,
+  #Cocos3dGameContainer,
+  #GameCanvas {
+    width: 90vw !important;
+    height: calc(90vw * 16 / 9) !important;
   }
 
   .footer {
     margin-top: 10px;
 
     font-size: 14px;
-  }
-}
-
-@media screen and (max-height: 700px) {
-
-  .header {
-    margin-top: 8px;
-    margin-bottom: 8px;
-
-    font-size: 24px;
-  }
-
-  #GameDiv {
-    width: min(82vw, 360px) !important;
-  }
-
-  .footer {
-    margin-top: 8px;
-    margin-bottom: 8px;
-
-    font-size: 13px;
   }
 }
